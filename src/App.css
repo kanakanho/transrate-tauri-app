@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    width: 100%-2rem;
+    height: 200%;
+    padding: 1rem;
+    font-size: 1rem;
+    color: "black";
+    background-color: rgba(244, 244, 244, 1);
+    border: none;
+    resize: none;
+}
+
+.main {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.output {
+    display: grid;
+    padding: 2px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2px;
+    row-gap: 2px;
+    text-align: left;
+}
+
+.output .title {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(220, 220, 220, 1);
+}
+
+.output h2 {
+    display: inline;
+    margin: 0.5rem;
+    padding: 0 1rem;
+}
+
+.output .title .Button {
+    border: none;
+    background-color: rgba(220, 220, 220, 1);
+    margin: 0;
+    padding: 0 2rem;
+}
+
+.output .title .Button .material-symbols-outlined {
+    margin: 0.4rem 0;
+    padding: 0.2rem;
+    border-radius: 20%;
+    background-color: rgba(244, 244, 244, 1);
+}
+
+.material-symbols-outlined {
+    text-align: right;
+    vertical-align: text-bottom;
+}
+
+.output p {
+    background-color: rgba(244, 244, 244, 1);
+    margin: 0;
+    padding: 1rem;
+    height: 200%;
+}
+
+.mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    height: inherit;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transform: translate(calc(50vw - 50%), 1.5rem);
+}
+
+.mode .Button {
+    margin: 0;
+    padding: 0.4rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: white;
+}
+
+.mode .Button .material-symbols-outlined {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
