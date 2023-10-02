@@ -11,4 +11,4 @@
 ## アプリ概要
 
 翻訳は GAS を用いて Google 翻訳を使用しています。  
-フロントは React + Vite + Tauri で実装されています。
+フロントは React + Tauri で実装されています。
