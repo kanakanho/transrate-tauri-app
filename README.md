@@ -1,7 +1,14 @@
-# Tauri + React
+# 翻訳アプリ
 
-This template should help get you started developing with Tauri and React in Vite.
+## 機能
 
-## Recommended IDE Setup
+日本語と英語を相互に翻訳できるアプリです。  
+左側に文字を入力すると右側に翻訳された言葉が返ってきます。
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+入力した文章と翻訳された文章はそれぞれ右上のクリップボードアイコンからコピーできます。  
+日本語と英語の切り替えは画面中央上部のアイコンにて切り替えできます。
+
+## アプリ概要
+
+翻訳は GAS を用いて Google 翻訳を使用しています。  
+フロントは React + Vite + Tauri で実装されています。
