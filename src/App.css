@@ -1,8 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    height: 25.4rem;
-    background-color:black;
+    /* background-color:black; */
 }
 
 #root {
@@ -12,7 +11,7 @@ body {
 
 textarea {
     width: 100%-2rem;
-    height: 400%;
+    height: 86.5%;
     padding: 1rem;
     font-size: 1rem;
     color: "black";
@@ -31,6 +30,7 @@ textarea {
     display: grid;
     padding: 2px;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3rem 15rem;
     column-gap: 2px;
     row-gap: 2px;
     text-align: left;
