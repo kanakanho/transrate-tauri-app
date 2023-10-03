@@ -1,6 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    height: 25.4rem;
+    background-color:black;
 }
 
 #root {
@@ -10,11 +12,11 @@ body {
 
 textarea {
     width: 100%-2rem;
-    height: 200%;
+    height: 400%;
     padding: 1rem;
     font-size: 1rem;
     color: "black";
-    background-color: rgba(244, 244, 244, 1);
+    background-color: rgba(240, 240, 240, 1);
     border: none;
     resize: none;
 }
@@ -37,6 +39,8 @@ textarea {
 .output .title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 3rem;
     background-color: rgba(220, 220, 220, 1);
 }
 
@@ -65,13 +69,6 @@ textarea {
     vertical-align: text-bottom;
 }
 
-.output p {
-    background-color: rgba(244, 244, 244, 1);
-    margin: 0;
-    padding: 1rem;
-    height: 200%;
-}
-
 .mode {
     display: flex;
     justify-content: center;
@@ -97,4 +94,8 @@ textarea {
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
+}
+
+.comment {
+    text-align: center;
 }

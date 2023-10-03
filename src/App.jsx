@@ -4,9 +4,11 @@ import { Button } from "./Button";
 
 function App() {
     const [inputText, setInputText] = useState("");
-    const [outputText, setOutputText] = useState("翻訳された文章がここに表示されます");
+    const [outputText, setOutputText] = useState("");
     const [mode, setMode] = useState("En to Ja");
     const [isTranslating, setIsTranslating] = useState(false);
+    const [clickCopyInputAlert, setClickCopyInputAlert] = useState(false);
+    const [clickCopyOutputAlert, setClickCopyOutputAlert] = useState(false);
 
     useEffect(() => {
         const handleKeyPress = (e) => {
@@ -22,18 +24,19 @@ function App() {
 
     const onClickPrint = () => {
         if (inputText !== "" && !isTranslating) {
+            const shiftText = inputText.replace(/\n/g, "%0A");
             setIsTranslating(true);
             setOutputText("翻訳中...");
             let url = "";
             if (mode === "En to Ja") {
                 url =
                     "https://script.google.com/macros/s/AKfycbz75gst14sUdgdFBflmAs_91Eqbna6jZwDJ0g3o7jBc-2BDuKQgBu9WMjkpH8Qx_65ZHg/exec?text=" +
-                    inputText +
+                    shiftText +
                     "&source=en&target=ja";
             } else {
                 url =
                     "https://script.google.com/macros/s/AKfycbz75gst14sUdgdFBflmAs_91Eqbna6jZwDJ0g3o7jBc-2BDuKQgBu9WMjkpH8Qx_65ZHg/exec?text=" +
-                    inputText +
+                    shiftText +
                     "&source=ja&target=en";
             }
             fetch(url)
@@ -41,6 +44,7 @@ function App() {
                 .then((data) => {
                     console.log(data);
                     setIsTranslating(false);
+                    // const replaceText = data.text.replace(/%0A/g, "\n");
                     setOutputText(data.text);
                 });
         } else if (isTranslating) {
@@ -63,11 +67,27 @@ function App() {
 
     const onClickCopyInput = () => {
         navigator.clipboard.writeText(inputText);
+        onClickCopyInputAlert();
     };
 
     const onClickCopyOutput = () => {
         navigator.clipboard.writeText(outputText);
+        onClickCopyOutputAlert();
     };
+
+    const onClickCopyInputAlert = () => {
+        setClickCopyInputAlert(true);
+        setTimeout(() => {
+            setClickCopyInputAlert(false);
+        }, 2000);
+    }
+
+    const onClickCopyOutputAlert = () => {
+        setClickCopyOutputAlert(true);
+        setTimeout(() => {
+            setClickCopyOutputAlert(false);
+        }, 2000);
+    }
 
     return (
         <>
@@ -96,10 +116,18 @@ function App() {
                     style={{}}
                     placeholder="翻訳する文章を入力してください。"
                 />
-                <p id="output">{outputText}</p>
+                {/* <p id="output">{outputText}</p>*/}
+                <textarea
+                    value={outputText}
+                    onChange={(e) => setInputText(e.target.value)}
+                    type="text"
+                    style={{}}
+                    disabled
+                    placeholder="翻訳された文章がここに表示されます"
+                />
             </div>
-            <div className="comment">{onClickCopyInput ? "" : <p>コピーしました。</p>}</div>
-            <div className="comment">{onClickCopyOutput ? "" : <p>コピーしました。</p>}</div>
+            <div className="comment">{clickCopyInputAlert ? <p>コピーしました。</p> : ""}</div>
+            <div className="comment">{clickCopyOutputAlert ? <p>コピーしました。</p> : ""}</div>
         </>
     );
 }
