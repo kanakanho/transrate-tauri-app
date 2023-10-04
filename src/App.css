@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    /* background-color:black; */
 }
 
 #root {
@@ -11,7 +10,7 @@ body {
 
 textarea {
     width: 100%-2rem;
-    height: 86.5%;
+    height: 100%;
     padding: 1rem;
     font-size: 1rem;
     color: "black";
@@ -30,7 +29,7 @@ textarea {
     display: grid;
     padding: 2px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3rem 15rem;
+    grid-template-rows: 3rem 30rem;
     column-gap: 2px;
     row-gap: 2px;
     text-align: left;
@@ -96,6 +95,17 @@ textarea {
     font-size: 1.5rem;
 }
 
-.comment {
+
+.comment-input {
+    opacity: 0.3;
+    font-size: 2rem;
     text-align: center;
+    transform: translate(-13rem, -20rem);
+}
+
+.comment-output {
+    opacity: 0.3;
+    font-size: 2rem;
+    text-align: center;
+    transform: translate(13rem, -20rem);
 }

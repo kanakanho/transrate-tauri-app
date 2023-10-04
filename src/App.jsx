@@ -44,7 +44,6 @@ function App() {
                 .then((data) => {
                     console.log(data);
                     setIsTranslating(false);
-                    // const replaceText = data.text.replace(/%0A/g, "\n");
                     setOutputText(data.text);
                 });
         } else if (isTranslating) {
@@ -80,14 +79,14 @@ function App() {
         setTimeout(() => {
             setClickCopyInputAlert(false);
         }, 2000);
-    }
+    };
 
     const onClickCopyOutputAlert = () => {
         setClickCopyOutputAlert(true);
         setTimeout(() => {
             setClickCopyOutputAlert(false);
         }, 2000);
-    }
+    };
 
     return (
         <>
@@ -116,7 +115,6 @@ function App() {
                     style={{}}
                     placeholder="翻訳する文章を入力してください。"
                 />
-                {/* <p id="output">{outputText}</p>*/}
                 <textarea
                     value={outputText}
                     onChange={(e) => setInputText(e.target.value)}
@@ -126,8 +124,8 @@ function App() {
                     placeholder="翻訳された文章がここに表示されます"
                 />
             </div>
-            <div className="comment">{clickCopyInputAlert ? <p>コピーしました。</p> : ""}</div>
-            <div className="comment">{clickCopyOutputAlert ? <p>コピーしました。</p> : ""}</div>
+            <div className="comment-input">{clickCopyInputAlert ? "コピーしました" : ""}</div>
+            <div className="comment-output">{clickCopyOutputAlert ? "コピーしました" : ""}</div>
         </>
     );
 }
