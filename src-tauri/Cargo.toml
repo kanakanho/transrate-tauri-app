@@ -1,11 +1,11 @@
 [package]
 name = "Transrate"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+version = "1.0.0"
+description = "Transrate App"
+authors = ["knakanho"]
 license = ""
-repository = ""
-edition = "2021"
+repository = "https://github.com/kanakanho/transrate-tauri-app"
+edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
